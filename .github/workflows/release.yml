@@ -15,4 +15,4 @@ jobs:
           components: clippy, rustfmt
           override: true
       - name: Run clippy
-        run: make -C module1/data_structures release
+        run: for d in module1/*/ ; do (cd "$d" && make release); done
