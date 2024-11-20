@@ -47,3 +47,48 @@ fn main() {
     println!("\t\tBinaryHeap: https://doc.rust-lang.org/std/collections/struct.BinaryHeap.html");
     misc::fruit_salad_binary_heap(5, fruits.clone());
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_fruit_salad_sequence() {
+        sequences::fruit_salad_sequence(5, _fruits());
+    }
+
+    #[test]
+    fn test_fruit_salad_deque() {
+        sequences::fruit_salad_deque(5, _fruits());
+    }
+
+    #[test]
+    fn test_fruit_salad_linked_list() {
+        sequences::fruit_salad_linked_list(5, _fruits());
+    }
+
+    #[test]
+    fn test_fruit_prices_hash_map() {
+        maps::fruit_prices_hash_map(_fruits());
+    }
+
+    #[test]
+    fn test_fruit_prices_b_tree_map() {
+        maps::fruit_prices_b_tree_map(_fruits());
+    }
+
+    #[test]
+    fn test_fruit_salad_hash_set() {
+        sets::fruit_salad_hash_set(5, _fruits());
+    }
+
+    #[test]
+    fn test_fruit_salad_b_tree_set() {
+        sets::fruit_salad_b_tree_set(5, _fruits());
+    }
+
+    #[test]
+    fn test_fruit_salad_binary_heap() {
+        misc::fruit_salad_binary_heap(5, _fruits());
+    }
+}
