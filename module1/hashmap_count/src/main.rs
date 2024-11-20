@@ -33,3 +33,22 @@ fn main() {
     );
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_logic() {
+        let numbers = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 3];
+        let mut result = logic(numbers);
+        result.sort_by(|a, b| a.0.cmp(&b.0));
+        assert_eq!(result, vec![(1, 2), (2, 1), (3, 2), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 1)]);
+    }
+
+    #[test]
+    fn test_logic_empty_numbers() {
+        let numbers = vec![];
+        let result = logic(numbers);
+        assert_eq!(result, vec![]);
+    }
+}
