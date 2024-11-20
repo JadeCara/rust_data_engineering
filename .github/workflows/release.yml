@@ -15,4 +15,4 @@ jobs:
           components: clippy, rustfmt
           override: true
       - name: Run clippy
-        run: make release
+        run: make -C module1/data_structures release

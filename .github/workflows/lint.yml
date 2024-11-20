@@ -15,4 +15,4 @@ jobs:
           components: clippy, rustfmt
           override: true
       - name: Run clippy
-        run: make lint
+        run: make -C module1/data_structures lint
