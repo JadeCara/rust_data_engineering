@@ -1,7 +1,8 @@
 [package]
 name = "data_structures"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 
 [dependencies]
+clap = { version = "4.3.4", features = ["derive"] }
 rand = "0.8.5"
