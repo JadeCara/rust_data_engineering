@@ -11,7 +11,7 @@ build: ## Build the project using cargo
 	cargo build
 
 run: ## Run the project using cargo
-	cargo run -- --number 5
+	cargo run
 
 test: ## Run the tests using cargo
 	cargo test

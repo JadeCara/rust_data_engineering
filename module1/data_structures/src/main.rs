@@ -1,3 +1,9 @@
+// Run with `cargo run -- --number 5`
+
+use rand::seq::SliceRandom;
+use rand::thread_rng;
+use std::collections::HashSet;
+
 // Use sequences module
 mod cli_salad;
 mod maps;
@@ -6,6 +12,24 @@ mod sequences;
 mod sets;
 
 use clap::Parser;
+
+fn _fruits() -> Vec<&'static str> {
+    vec![
+        "apple",
+        "banana",
+        "cherry",
+        "date",
+        "elderberry",
+        "fig",
+        "grape",
+    ]
+}
+
+fn generate_fruit() -> &'static str {
+    let fruits = _fruits();
+    let mut rng = thread_rng();
+    fruits.choose(&mut rng).unwrap()
+}
 
 #[derive(Parser)]
 #[clap(
@@ -30,19 +54,16 @@ fn main() {
         num_fruits,
         cli_salad::create_fruit_salad(num_fruits)
     );
-    info(num_fruits);
-}
+    // Generate a set of 100 random fruits
+    let mut fruit_set = HashSet::new();
+    println!("Generating 100 random fruits...");
+    for _ in 0..100 {
+        fruit_set.insert(generate_fruit());
+    }
 
-fn _fruits() -> Vec<&'static str> {
-    vec![
-        "apple",
-        "banana",
-        "cherry",
-        "date",
-        "elderberry",
-        "fig",
-        "grape",
-    ]
+    println!("Number of unique fruits generated: {}", fruit_set.len());
+
+    info(num_fruits);
 }
 
 fn info(num_fruits: usize) {
