@@ -19,15 +19,11 @@ fn main() {
     let pagerank = pagerank_impl::PageRank::new(0.85, 100);
     let ranks = pagerank.rank(&graph);
 
-    // Prints the PageRank values.
     for (i, rank) in ranks.iter().enumerate() {
         println!("The PageRank of {} is {}", names[i], rank);
     }
 
-    // Explanation of how PageRank works.
     let explanation = "PageRank is a link analysis algorithm used by Google that uses the hyperlink structure of the web to determine a quality ranking for each web page. It works by counting the number and quality of links to a page to determine a rough estimate of how important the website is.";
-
-    // Prints the explanation wrapped at 78 characters per line.
     println!("{}", fill(explanation, 78));
 }
 

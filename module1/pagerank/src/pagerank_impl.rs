@@ -5,7 +5,6 @@ pub struct PageRank {
 }
 
 impl PageRank {
-    // The new function creates a new instance of the PageRank struct.
     pub fn new(damping: f64, iterations: usize) -> Self {
         Self {
             damping,
@@ -27,7 +26,6 @@ impl PageRank {
         new_ranks
     }
 
-    // The rank function calculates and returns the PageRank for each node in the graph.
     pub fn rank(&self, graph: &[Vec<usize>]) -> Vec<f64> {
         let node_count = graph.len();
 
@@ -42,12 +40,9 @@ impl PageRank {
             for rank in &mut new_ranks {
                 *rank = *rank * self.damping + (1.0 - self.damping) / (node_count as f64);
             }
-
-            // Replaces the old PageRank values with the new ones.
             ranks = new_ranks;
         }
 
-        // Returns the final PageRank values.
         ranks
     }
 }
