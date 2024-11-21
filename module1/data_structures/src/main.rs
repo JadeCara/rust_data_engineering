@@ -82,41 +82,41 @@ mod tests {
 
     #[test]
     fn test_fruit_salad_sequence() {
-        sequences::fruit_salad_sequence(5, util::fruits());
+        sequences::fruit_salad_sequence(5);
     }
 
     #[test]
     fn test_fruit_salad_deque() {
-        sequences::fruit_salad_deque(5, util::fruits());
+        sequences::fruit_salad_deque(5);
     }
 
     #[test]
     fn test_fruit_salad_linked_list() {
-        sequences::fruit_salad_linked_list(5, util::fruits());
+        sequences::fruit_salad_linked_list(5);
     }
 
     #[test]
     fn test_fruit_prices_hash_map() {
-        maps::fruit_prices_hash_map(util::fruits());
+        maps::fruit_prices_hash_map();
     }
 
     #[test]
     fn test_fruit_prices_b_tree_map() {
-        maps::fruit_prices_b_tree_map(util::fruits());
+        maps::fruit_prices_b_tree_map();
     }
 
     #[test]
     fn test_fruit_salad_hash_set() {
-        sets::fruit_salad_hash_set(5, util::fruits());
+        sets::fruit_salad_hash_set(5);
     }
 
     #[test]
     fn test_fruit_salad_b_tree_set() {
-        sets::fruit_salad_b_tree_set(5, util::fruits());
+        sets::fruit_salad_b_tree_set(5);
     }
 
     #[test]
     fn test_fruit_salad_binary_heap() {
-        misc::fruit_salad_binary_heap(5, util::fruits());
+        misc::fruit_salad_binary_heap(5);
     }
 }
