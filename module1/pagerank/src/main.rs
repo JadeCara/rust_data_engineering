@@ -27,20 +27,13 @@ fn main() {
     println!("{}", fill(explanation, 78));
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn test_pagerank() {
-        let graph = vec![
-            vec![1, 2],
-            vec![0],
-            vec![0, 3],
-            vec![0],
-            vec![0, 1],
-        ];
+        let graph = vec![vec![1, 2], vec![0], vec![0, 3], vec![0], vec![0, 1]];
 
         let pagerank = pagerank_impl::PageRank::new(0.85, 100);
         let ranks = pagerank.rank(&graph);
