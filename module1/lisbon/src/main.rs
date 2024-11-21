@@ -63,7 +63,7 @@ fn main() {
             .with_height(10)
             .with_offset(10)
             .with_width(21)
-            .with_caption("Distance from Belem Tower to other Lisbon landmarks".to_string()),
+            .with_caption("Distance from Belem Tower to other Lisbon landmarks (km)".to_string()),
     );
     print!("{}", res);
 }
