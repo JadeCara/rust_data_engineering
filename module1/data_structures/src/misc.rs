@@ -47,6 +47,7 @@ fn generate_fruit_salad() -> BinaryHeap<Fruit> {
     let mut fruit_salad = BinaryHeap::new();
 
     let mut figs_count = 0;
+    // keep adding fruit to the salad until we have two servings of figs
     while figs_count < 2 {
         let fruit = fruits.choose(&mut rng).unwrap();
         if *fruit == "Fig" {
